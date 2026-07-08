@@ -1,18 +1,18 @@
 {
   "name": "sap-b1-tools",
-  "version": "1.2.0",
-  "description": "SAP Business One tools for Claude: live SQL querying against each company database (mcp-sapb1-sql, one instance per DB) plus an offline semantic dictionary of ~2,200 SAP B1 tables (descriptions, categories, fields).",
+  "version": "1.3.0",
+  "description": "SAP Business One tools for Claude: live SQL querying against configurable company databases (mcp-sapb1-sql, one instance per DB slot) plus an offline semantic dictionary of ~2,200 SAP B1 tables (descriptions, categories, fields).",
   "mcpServers": {
     "sap-b1-dictionary": {
       "command": "node",
       "args": ["${CLAUDE_PLUGIN_ROOT}/servers/server.js"]
     },
-    "sap-sql-blue": {
+    "sap-sql-1": {
       "command": "npx",
       "args": ["-y", "mcp-sapb1-sql"],
       "env": {
         "DB_SERVER": "${SAP_DB_SERVER}",
-        "DB_NAME": "BLUE",
+        "DB_NAME": "${SAP_DB_1}",
         "DB_USER": "${SAP_DB_USER}",
         "DB_PASSWORD": "${SAP_DB_PASSWORD}",
         "DB_PORT": "${SAP_DB_PORT:-1433}",
@@ -20,12 +20,12 @@
         "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
       }
     },
-    "sap-sql-blue-usa": {
+    "sap-sql-2": {
       "command": "npx",
       "args": ["-y", "mcp-sapb1-sql"],
       "env": {
         "DB_SERVER": "${SAP_DB_SERVER}",
-        "DB_NAME": "BLUE_USA",
+        "DB_NAME": "${SAP_DB_2}",
         "DB_USER": "${SAP_DB_USER}",
         "DB_PASSWORD": "${SAP_DB_PASSWORD}",
         "DB_PORT": "${SAP_DB_PORT:-1433}",
@@ -33,12 +33,12 @@
         "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
       }
     },
-    "sap-sql-team": {
+    "sap-sql-3": {
       "command": "npx",
       "args": ["-y", "mcp-sapb1-sql"],
       "env": {
         "DB_SERVER": "${SAP_DB_SERVER}",
-        "DB_NAME": "TEAM",
+        "DB_NAME": "${SAP_DB_3}",
         "DB_USER": "${SAP_DB_USER}",
         "DB_PASSWORD": "${SAP_DB_PASSWORD}",
         "DB_PORT": "${SAP_DB_PORT:-1433}",
@@ -46,12 +46,12 @@
         "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
       }
     },
-    "sap-sql-teamh2021": {
+    "sap-sql-4": {
       "command": "npx",
       "args": ["-y", "mcp-sapb1-sql"],
       "env": {
         "DB_SERVER": "${SAP_DB_SERVER}",
-        "DB_NAME": "TEAMH2021",
+        "DB_NAME": "${SAP_DB_4}",
         "DB_USER": "${SAP_DB_USER}",
         "DB_PASSWORD": "${SAP_DB_PASSWORD}",
         "DB_PORT": "${SAP_DB_PORT:-1433}",
