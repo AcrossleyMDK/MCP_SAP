@@ -1,0 +1,14 @@
+{
+  "name": "mondraker-plugins",
+  "version": "1.0.0",
+  "description": "Internal Claude Code plugin marketplace for Mondraker.",
+  "owner": { "name": "Mondraker", "email": "desarrollo@mondraker.com" },
+  "plugins": [
+    {
+      "name": "sap-b1-tools",
+      "description": "SAP Business One tools: live SQL querying + offline schema dictionary (~2,200 tables).",
+      "version": "1.0.0",
+      "source": "./"
+    }
+  ]
+}
