@@ -3,8 +3,8 @@
 A Claude Code plugin that gives the team two SAP Business One capabilities:
 
 1. **`sap-sql-*`** — live SQL querying, with **one server instance per company
-   database** (`sap-sql-blue`, `sap-sql-blue-usa`, `sap-sql-road`, `sap-sql-team`,
-   `sap-sql-globex`, `sap-sql-the-line-bike`). Each is powered by the public npm
+   database** (`sap-sql-blue`, `sap-sql-blue-usa`, `sap-sql-team`,
+   `sap-sql-teamh2021`). Each is powered by the public npm
    server [`mcp-sapb1-sql`](https://www.npmjs.com/package/mcp-sapb1-sql) (run on
    demand with `npx`) and pinned to its own database. All are connected at the
    same time, so you can query any company's data — and every server's helper

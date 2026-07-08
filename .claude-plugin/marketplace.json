@@ -7,7 +7,7 @@
     {
       "name": "sap-b1-tools",
       "description": "SAP Business One tools: live SQL querying per company database + offline schema dictionary (~2,200 tables).",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "source": "./"
     }
   ]
