@@ -1,18 +1,83 @@
 {
   "name": "sap-b1-tools",
-  "version": "1.0.0",
-  "description": "SAP Business One tools for Claude: live SQL querying against the company database (mcp-sapb1-sql) plus an offline semantic dictionary of ~2,200 SAP B1 tables (descriptions, categories, fields).",
+  "version": "1.1.0",
+  "description": "SAP Business One tools for Claude: live SQL querying against each company database (mcp-sapb1-sql, one instance per DB) plus an offline semantic dictionary of ~2,200 SAP B1 tables (descriptions, categories, fields).",
   "mcpServers": {
     "sap-b1-dictionary": {
       "command": "node",
       "args": ["${CLAUDE_PLUGIN_ROOT}/servers/server.js"]
     },
-    "sap-sql": {
+    "sap-sql-blue": {
       "command": "npx",
       "args": ["-y", "mcp-sapb1-sql"],
       "env": {
         "DB_SERVER": "${SAP_DB_SERVER}",
-        "DB_NAME": "${SAP_DB_NAME}",
+        "DB_NAME": "BLUE",
+        "DB_USER": "${SAP_DB_USER}",
+        "DB_PASSWORD": "${SAP_DB_PASSWORD}",
+        "DB_PORT": "${SAP_DB_PORT:-1433}",
+        "DB_ENCRYPT": "${SAP_DB_ENCRYPT:-false}",
+        "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
+      }
+    },
+    "sap-sql-blue-usa": {
+      "command": "npx",
+      "args": ["-y", "mcp-sapb1-sql"],
+      "env": {
+        "DB_SERVER": "${SAP_DB_SERVER}",
+        "DB_NAME": "BLUE_USA",
+        "DB_USER": "${SAP_DB_USER}",
+        "DB_PASSWORD": "${SAP_DB_PASSWORD}",
+        "DB_PORT": "${SAP_DB_PORT:-1433}",
+        "DB_ENCRYPT": "${SAP_DB_ENCRYPT:-false}",
+        "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
+      }
+    },
+    "sap-sql-road": {
+      "command": "npx",
+      "args": ["-y", "mcp-sapb1-sql"],
+      "env": {
+        "DB_SERVER": "${SAP_DB_SERVER}",
+        "DB_NAME": "ROAD",
+        "DB_USER": "${SAP_DB_USER}",
+        "DB_PASSWORD": "${SAP_DB_PASSWORD}",
+        "DB_PORT": "${SAP_DB_PORT:-1433}",
+        "DB_ENCRYPT": "${SAP_DB_ENCRYPT:-false}",
+        "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
+      }
+    },
+    "sap-sql-team": {
+      "command": "npx",
+      "args": ["-y", "mcp-sapb1-sql"],
+      "env": {
+        "DB_SERVER": "${SAP_DB_SERVER}",
+        "DB_NAME": "TEAM",
+        "DB_USER": "${SAP_DB_USER}",
+        "DB_PASSWORD": "${SAP_DB_PASSWORD}",
+        "DB_PORT": "${SAP_DB_PORT:-1433}",
+        "DB_ENCRYPT": "${SAP_DB_ENCRYPT:-false}",
+        "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
+      }
+    },
+    "sap-sql-globex": {
+      "command": "npx",
+      "args": ["-y", "mcp-sapb1-sql"],
+      "env": {
+        "DB_SERVER": "${SAP_DB_SERVER}",
+        "DB_NAME": "GLOBEX",
+        "DB_USER": "${SAP_DB_USER}",
+        "DB_PASSWORD": "${SAP_DB_PASSWORD}",
+        "DB_PORT": "${SAP_DB_PORT:-1433}",
+        "DB_ENCRYPT": "${SAP_DB_ENCRYPT:-false}",
+        "DB_TRUST_SERVER_CERTIFICATE": "${SAP_DB_TRUST_SERVER_CERTIFICATE:-true}"
+      }
+    },
+    "sap-sql-the-line-bike": {
+      "command": "npx",
+      "args": ["-y", "mcp-sapb1-sql"],
+      "env": {
+        "DB_SERVER": "${SAP_DB_SERVER}",
+        "DB_NAME": "THE_LINE_BIKE",
         "DB_USER": "${SAP_DB_USER}",
         "DB_PASSWORD": "${SAP_DB_PASSWORD}",
         "DB_PORT": "${SAP_DB_PORT:-1433}",
